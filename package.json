@@ -1,0 +1,13 @@
+{
+  "name": "eledora-ai",
+  "version": "1.0.0",
+  "description": "Eledora AI - Global AI Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
