@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eledora AI</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f7f8fc;
+      color: #151823;
+    }
+
+    header {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+      background: white;
+      border-bottom: 1px solid #e8e8ee;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #6c4cff;
+    }
+
+    .login {
+      padding: 10px 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: white;
+    }
+
+    main {
+      min-height: calc(100vh - 70px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 35px;
+    }
+
+    .box {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+    }
+
+    textarea {
+      width: 100%;
+      height: 130px;
+      border: none;
+      outline: none;
+      resize: none;
+      font-size: 17px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    button {
+      border: 1px solid #ddd;
+      background: #fafafa;
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .send {
+      margin-left: auto;
+      background: #6c4cff;
+      color: white;
+      border: none;
+      padding: 12px 22px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      background: white;
+      border: 1px solid #eee;
+      padding: 18px 10px;
+      border-radius: 14px;
+    }
+
+    @media (max-width: 700px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Eledora<span>AI</span></div>
+  <button class="login">Connexion</button>
+</header>
+
+<main>
+  <div class="container">
+
+    <h1>Que voulez-vous accomplir ?</h1>
+
+    <p class="subtitle">
+      Eledora AI transforme vos idées en résultats.
+    </p>
+
+    <div class="box">
+
+      <textarea
+        placeholder="Écrivez votre demande... Exemple : Analyse ce document et prépare-moi un rapport."
+      ></textarea>
+
+      <div class="actions">
+        <button>📎 Fichier</button>
+        <button>🎨 Image</button>
+        <button>🎬 Vidéo</button>
+        <button>🔎 Recherche</button>
+        <button>📊 Data</button>
+
+        <button class="send">Envoyer ➜</button>
+      </div>
+
+    </div>
+
+    <div class="features">
+
+      <div class="feature">📚 Études</div>
+      <div class="feature">📝 Documents</div>
+      <div class="feature">💻 Code</div>
+      <div class="feature">🤖 Agents IA</div>
+
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>
