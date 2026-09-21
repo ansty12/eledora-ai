@@ -1,17 +1,40 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eledora AI</title>
+<script>
+  const textarea = document.querySelector("textarea");
+  const sendButton = document.querySelector(".send");
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
+  sendButton.addEventListener("click", async () => {
+    const message = textarea.value.trim();
+
+    if (!message) {
+      alert("Écrivez votre demande.");
+      return;
     }
+
+    sendButton.disabled = true;
+    sendButton.textContent = "Envoi...";
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+
+      alert(data.reply);
+    } catch (error) {
+      alert("Une erreur est survenue.");
+    }
+
+    sendButton.disabled = false;
+    sendButton.textContent = "Envoyer ➜";
+  });
+</script>
+
+      
 
     body {
       background: #f7f8fc;
