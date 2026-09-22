@@ -10,7 +10,6 @@ const ai = new GoogleGenAI({
 });
 
 app.use(express.json());
-
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
@@ -23,24 +22,27 @@ app.post("/api/chat", async (req, res) => {
 
     if (!message) {
       return res.status(400).json({
-        error: "Message manquant"
+        reply: "Veuillez écrire un message."
       });
     }
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.8-flash",
+      model: "gemini-2.5-flash-lite",
       contents: message
     });
 
+    console.log("Réponse Gemini :", response.text);
+
     res.json({
-      reply: response.text
+      reply: response.text || "Gemini n'a retourné aucun texte."
     });
 
   } catch (error) {
     console.error("Erreur Gemini :", error);
 
     res.status(500).json({
-      error: "Impossible de contacter Eledora AI pour le moment."
+      reply: "Erreur de connexion avec Gemini.",
+      details: error.message
     });
   }
 });
